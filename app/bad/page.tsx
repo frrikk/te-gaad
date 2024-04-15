@@ -7,14 +7,18 @@ import diagram from "@/public/Screenshot 2024-04-02 at 12.56 1.png";
 export default function BadPage() {
   return (
     <div className={cn("grid grid-cols-6")} aria-hidden>
-      <div className={cn("col-span-1 text-xs tracking-[-0.8px]")}>
-        <img src={bilde.src} />
+      <div className={cn("col-span-1 text-xs tracking-[-0.8px] p-4")}>
+        <img src={bilde.src} width={300} />
         Det har ikke manglet på positive lekkasjer over hele landet om hva som
         kommer i nasjonal transportplan. Først nå får vi se helheten og baksiden
         av medaljen. Her snakker finansminister Vedum (Sp), statsminister Støre
         (Ap) og samferdselsminister Nygård om InterCity-satsing på østlandet.
         <div>
-          <a tabIndex={-1} href="#" className={cn("text-[#0545EB]")}>
+          <a
+            tabIndex={-1}
+            href="#"
+            className={cn("text-[#0545EB] font-normal cursor-default")}
+          >
             Klikk her
           </a>
         </div>
@@ -51,7 +55,11 @@ export default function BadPage() {
           stortingsperiode, men legger hver gang føringer for de neste 6+6
           årene.
           <div>
-            <a tabIndex={-1} href="#" className={cn("text-[#0545EB]")}>
+            <a
+              tabIndex={-1}
+              href="#"
+              className={cn("text-[#0545EB] font-normal cursor-default")}
+            >
               Klikk her
             </a>
           </div>
@@ -130,7 +138,7 @@ export default function BadPage() {
             <a
               tabIndex={-1}
               href="#"
-              className={cn("text-[#0545EB] font-normal")}
+              className={cn("text-[#0545EB] font-normal cursor-default")}
             >
               Klikk her
             </a>
@@ -197,7 +205,7 @@ export default function BadPage() {
             <a
               tabIndex={-1}
               href="#"
-              className={cn("text-[#0545EB] font-normal")}
+              className={cn("text-[#0545EB] font-normal cursor-default")}
             >
               Klikk her
             </a>
@@ -223,7 +231,7 @@ export default function BadPage() {
             <a
               tabIndex={-1}
               href="#"
-              className={cn("text-[#0545EB] font-normal")}
+              className={cn("text-[#0545EB] font-normal cursor-default")}
             >
               Klikk her
             </a>
@@ -231,6 +239,45 @@ export default function BadPage() {
         </div>
         <img src={diagram.src} width={300} />
         <div>Bilde av sektordiagram</div>
+      </div>
+      <div
+        className={cn(
+          "bottom-0 bg-[#F6FAFF] w-full col-span-full mt-10 flex justify-end",
+        )}
+      >
+        <div
+          className={cn(
+            "text-[#669FF5] font-light text-xs tracking-tighter p-8 flex gap-8",
+          )}
+        >
+          <div>
+            <div>KONTAKT</div>
+            <div>Om NRK</div>
+            <div>Kontakt NRK</div>
+            <div>Lisens</div>
+            <div>Publikum i NRK</div>
+            <div>Delta i NRK-programmer</div>
+            <div>Jobb i NRK</div>
+            <div>Presse</div>
+          </div>
+          <div>
+            <div>HELP</div>
+            <div>Brukerstøtte</div>
+            <div>Tilgjengelighet</div>
+            <div>Personvern</div>
+            <div>Informasjonskapsler (cookies)</div>
+            <div>TJENESTER</div>
+            <div>Yr</div>
+            <div>NRK Skole</div>
+          </div>
+          <div>
+            <div>PRODUKSJON</div>
+            <div>Eksterne produksjoner</div>
+            <div>Retningslinjer og design</div>
+            <div>SALG</div>
+            <div>Spons og salg</div>
+          </div>
+        </div>
       </div>
     </div>
   );
