@@ -31,3 +31,12 @@ body {
     text-wrap: balance;
   }
 }
+
+.text-stroke {
+  /*-webkit-text-stroke: .5px #1b1b1b;*/
+  font-size:12px;
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke-width: medium;
+  -webkit-text-stroke-color: #474747;
+}
