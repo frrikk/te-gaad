@@ -54,15 +54,19 @@ export default function BadLayout(props: { children: React.ReactNode }) {
 const HovedMenyLink = ({
   tabIndex,
   children,
+  outline,
 }: {
   tabIndex?: number;
   children: string;
+  outline?: boolean;
 }) => (
   <a
     href={`/bad/${children.toLowerCase()}-demo`}
     tabIndex={tabIndex}
     aria-hidden
-    className={cn("text-stroke cursor-default outline-0")}
+    className={cn("text-stroke cursor-default outline-0", {
+      "outline-1": outline,
+    })}
   >
     {children}
   </a>

@@ -124,7 +124,7 @@ export default function BadPage() {
           forplikter seg til ulike målsetninger og får tilført statlige midler,
           pakkene er ofte kontroversielle lokalt på grunn av bompengeandelen.
           <div>
-            <KlikkHer href="demo" />
+            <KlikkHer href="demo" outline />
           </div>
         </div>
         <div>
@@ -205,7 +205,7 @@ export default function BadPage() {
           svarene på om de skrittene Nygård tar egentlig er ganske små i den
           store sammenhengen.
           <div>
-            <KlikkHer href="demo" />
+            <KlikkHer href="demo" outline />
           </div>
         </div>
         <img src={diagram.src} width={300} />
@@ -268,9 +268,11 @@ export default function BadPage() {
   );
 }
 
-const KlikkHer = ({ href }: { href: string }) => (
+const KlikkHer = ({ href, outline }: { href: string; outline?: boolean }) => (
   <a
-    className={cn("text-[#0545EB] font-normal cursor-default outline-0")}
+    className={cn("text-[#0545EB] font-normal cursor-default outline-0", {
+      "outline-1": outline,
+    })}
     href={`/bad/${href}`}
   >
     Klikk her
