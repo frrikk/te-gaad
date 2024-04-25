@@ -4,7 +4,7 @@ import { cn } from "@/utils/cn";
 import { Logo } from "@/app/(components)/logo";
 import { Chevron } from "@/app/(components)/chevron";
 import { Menu } from "@/app/(components)/menu";
-import React from "react";
+import React, { ReactNode } from "react";
 
 export default function BadLayout(props: { children: React.ReactNode }) {
   const [open, setOpen] = React.useState(false);
@@ -16,62 +16,19 @@ export default function BadLayout(props: { children: React.ReactNode }) {
           <div className={cn("text-stroke")}>Viktig logo</div>
         </div>
         <div className={cn("flex gap-20 mr-48 relative")}>
+          <HovedMenyLink>Dagens artikkel</HovedMenyLink>
+          <HovedMenyLink>Nyheter</HovedMenyLink>
+          <HovedMenyLink>Sport</HovedMenyLink>
+          <HovedMenyLink tabIndex={-1}>Kultur</HovedMenyLink>
+          <HovedMenyLink>Humor</HovedMenyLink>
           <a
-            href="#"
-            tabIndex={-1}
-            className={cn("text-stroke cursor-default")}
-          >
-            Dagens <div>artikkel</div>
-          </a>
-          <a
-            href="#"
-            tabIndex={-1}
-            aria-hidden
-            className={cn("text-stroke cursor-default")}
-          >
-            Nyheter
-          </a>
-          <a
-            href="#"
-            tabIndex={-1}
-            aria-hidden
-            className={cn("text-stroke cursor-default")}
-          >
-            Sport
-          </a>
-          <a
-            href="#"
-            tabIndex={-1}
-            aria-hidden
-            className={cn("text-stroke cursor-default")}
-          >
-            Kultur
-          </a>
-          <a
-            href="#"
-            tabIndex={-1}
-            aria-hidden
-            className={cn("text-stroke cursor-default")}
-          >
-            Humor
-          </a>
-          <a
-            href="#"
-            tabIndex={-1}
-            aria-hidden
-            className={cn("text-stroke cursor-default")}
+            className={cn("text-stroke cursor-default outline-0")}
+            href="/distrikt"
           >
             Distrikt
           </a>
           <div className={cn("flex relative")}>
-            <a
-              href="#"
-              tabIndex={-1}
-              aria-hidden
-              className={cn("text-stroke cursor-default flex")}
-            >
-              Mer
-            </a>
+            <HovedMenyLink>Mer</HovedMenyLink>
             <Chevron
               onClick={() => setOpen(!open)}
               className={cn("relative top-2")}
@@ -93,3 +50,20 @@ export default function BadLayout(props: { children: React.ReactNode }) {
     </>
   );
 }
+
+const HovedMenyLink = ({
+  tabIndex,
+  children,
+}: {
+  tabIndex?: number;
+  children: string;
+}) => (
+  <a
+    href={`/bad/${children.toLowerCase()}-demo`}
+    tabIndex={tabIndex}
+    aria-hidden
+    className={cn("text-stroke cursor-default outline-0")}
+  >
+    {children}
+  </a>
+);

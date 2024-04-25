@@ -3,6 +3,7 @@
 import { cn } from "@/utils/cn";
 import bilde from "@/public/tv-logo.png";
 import diagram from "@/public/Screenshot 2024-04-02 at 12.56 1.png";
+import { ReactNode } from "react";
 
 export default function BadPage() {
   return (
@@ -14,13 +15,7 @@ export default function BadPage() {
         av medaljen. Her snakker finansminister Vedum (Sp), statsminister Støre
         (Ap) og samferdselsminister Nygård om InterCity-satsing på østlandet.
         <div>
-          <a
-            tabIndex={-1}
-            href="#"
-            className={cn("text-[#0545EB] font-normal cursor-default")}
-          >
-            Klikk her
-          </a>
+          <KlikkHer href="demo" />
         </div>
       </div>
       <div
@@ -55,13 +50,7 @@ export default function BadPage() {
           stortingsperiode, men legger hver gang føringer for de neste 6+6
           årene.
           <div>
-            <a
-              tabIndex={-1}
-              href="#"
-              className={cn("text-[#0545EB] font-normal cursor-default")}
-            >
-              Klikk her
-            </a>
+            <KlikkHer href="demo" />
           </div>
         </div>
         <div>
@@ -135,13 +124,7 @@ export default function BadPage() {
           forplikter seg til ulike målsetninger og får tilført statlige midler,
           pakkene er ofte kontroversielle lokalt på grunn av bompengeandelen.
           <div>
-            <a
-              tabIndex={-1}
-              href="#"
-              className={cn("text-[#0545EB] font-normal cursor-default")}
-            >
-              Klikk her
-            </a>
+            <KlikkHer href="demo" />
           </div>
         </div>
         <div>
@@ -202,13 +185,7 @@ export default function BadPage() {
             er også grunn til å merke seg.
           </span>
           <div>
-            <a
-              tabIndex={-1}
-              href="#"
-              className={cn("text-[#0545EB] font-normal cursor-default")}
-            >
-              Klikk her
-            </a>
+            <KlikkHer href="demo" />
           </div>
         </div>
         <div>
@@ -228,13 +205,7 @@ export default function BadPage() {
           svarene på om de skrittene Nygård tar egentlig er ganske små i den
           store sammenhengen.
           <div>
-            <a
-              tabIndex={-1}
-              href="#"
-              className={cn("text-[#0545EB] font-normal cursor-default")}
-            >
-              Klikk her
-            </a>
+            <KlikkHer href="demo" />
           </div>
         </div>
         <img src={diagram.src} width={300} />
@@ -247,38 +218,73 @@ export default function BadPage() {
       >
         <div
           className={cn(
-            "text-[#669FF5] font-light text-xs tracking-tighter p-8 flex gap-8",
+            "text-[#669FF5] font-light text-xs tracking-tighter p-8 flex gap-8 cursor-auto",
           )}
         >
-          <div>
+          <div className={cn("flex flex-col")}>
             <div>KONTAKT</div>
-            <div>Om NRK</div>
-            <div>Kontakt NRK</div>
-            <div>Lisens</div>
-            <div>Publikum i NRK</div>
-            <div>Delta i NRK-programmer</div>
-            <div>Jobb i NRK</div>
-            <div>Presse</div>
+            <FooterMenyKlikk href="om-nrk">Om NRK</FooterMenyKlikk>
+            <FooterMenyKlikk href="kontakt">Kontakt NRK</FooterMenyKlikk>
+            <FooterMenyKlikk href="lisens">Lisens</FooterMenyKlikk>
+            <FooterMenyKlikk href="publikum-i-nrk">
+              Publikum i NRK
+            </FooterMenyKlikk>
+            <FooterMenyKlikk href="delta">
+              Delta i NRK-programmer
+            </FooterMenyKlikk>
+            <FooterMenyKlikk href="jobb">Jobb i NRK</FooterMenyKlikk>
+            <FooterMenyKlikk href="presse">Presse</FooterMenyKlikk>
           </div>
-          <div>
+          <div className={cn("flex flex-col")}>
             <div>HELP</div>
-            <div>Brukerstøtte</div>
-            <div>Tilgjengelighet</div>
-            <div>Personvern</div>
-            <div>Informasjonskapsler (cookies)</div>
-            <div>TJENESTER</div>
-            <div>Yr</div>
-            <div>NRK Skole</div>
+            <FooterMenyKlikk href="brukerstøtte">Brukerstøtte</FooterMenyKlikk>
+            <FooterMenyKlikk href="tilgjengelighet">
+              Tilgjengelighet
+            </FooterMenyKlikk>
+            <FooterMenyKlikk href="personvern">Personvern</FooterMenyKlikk>
+            <FooterMenyKlikk href="info">
+              Informasjonskapsler (cookies)
+            </FooterMenyKlikk>
+            <FooterMenyKlikk href="tjenester">TJENESTER</FooterMenyKlikk>
+            <FooterMenyKlikk href="yr">Yr</FooterMenyKlikk>
+            <FooterMenyKlikk href="nrk-solo">NRK Skole</FooterMenyKlikk>
           </div>
-          <div>
+          <div className={cn("flex flex-col")}>
             <div>PRODUKSJON</div>
-            <div>Eksterne produksjoner</div>
-            <div>Retningslinjer og design</div>
-            <div>SALG</div>
-            <div>Spons og salg</div>
+            <FooterMenyKlikk href="eksterne-produksjoner">
+              Eksterne produksjoner
+            </FooterMenyKlikk>
+            <FooterMenyKlikk href="retningslinjer">
+              Retningslinjer og design
+            </FooterMenyKlikk>
+            <FooterMenyKlikk href="salg">SALG</FooterMenyKlikk>
+            <FooterMenyKlikk href="spons-og-salg">
+              Spons og salg
+            </FooterMenyKlikk>
           </div>
         </div>
       </div>
     </div>
   );
 }
+
+const KlikkHer = ({ href }: { href: string }) => (
+  <a
+    className={cn("text-[#0545EB] font-normal cursor-default outline-0")}
+    href={`/bad/${href}`}
+  >
+    Klikk her
+  </a>
+);
+
+const FooterMenyKlikk = ({
+  href,
+  children,
+}: {
+  href: string;
+  children: ReactNode;
+}) => (
+  <a href={`/bad/${href}-demo`} className="cursor-default outline-0">
+    {children}
+  </a>
+);
