@@ -8,55 +8,74 @@ export const Menu = () => {
   return (
     <div className={cn("grid grid-cols-6 tracking-[-1.5px]")}>
       <div className={cn("flex flex-col gap-2")}>
-        <div>NYHETER</div>
-        <div>NYHETSSENTER</div>
-        <div>NORGE</div>
-        <div>URIX</div>
-        <div>DEBATTEN</div>
-        <div>KULTUR</div>
-        <div>LIVSTIL</div>
+        <MegaMenuLink>NYHETER</MegaMenuLink>
+        <MegaMenuLink>NYHETSSENTER</MegaMenuLink>
+        <MegaMenuLink>NORGE</MegaMenuLink>
+        <MegaMenuLink>URIX</MegaMenuLink>
+        <MegaMenuLink>DEBATTEN</MegaMenuLink>
+        <MegaMenuLink>KULTUR</MegaMenuLink>
+        <MegaMenuLink>LIVSTIL</MegaMenuLink>
       </div>
       <div className={cn("flex flex-col gap-2")}>
-        <div>VITEN</div>
-        <div>DOKUMENTAR</div>
-        <div>YTRING</div>
-        <div>NRK SÀPMI</div>
-        <div>NRK KVENSK</div>
+        <MegaMenuLink>VITEN</MegaMenuLink>
+        <MegaMenuLink>DOKUMENTAR</MegaMenuLink>
+        <MegaMenuLink>YTRING</MegaMenuLink>
+        <MegaMenuLink>NRK SÀPMI</MegaMenuLink>
+        <MegaMenuLink>NRK KVENSK</MegaMenuLink>
       </div>
       <div className={cn("flex flex-col gap-2")}>
-        <div>SPORT</div>
-        <div>SPORTSNYHETER</div>
-        <div>LIVESPORT</div>
-        <div>SPORTSENDEPLAN</div>
+        <MegaMenuLink>SPORT</MegaMenuLink>
+        <MegaMenuLink>SPORTSNYHETER</MegaMenuLink>
+        <MegaMenuLink>LIVESPORT</MegaMenuLink>
+        <MegaMenuLink>SPORTSENDEPLAN</MegaMenuLink>
       </div>
       <div className={cn("flex flex-col gap-2")}>
-        <div>DISTRIKT</div>
-        <div>AGDER</div>
-        <div>AKERSHUS</div>
-        <div>BUSKERUD</div>
-        <div>FINNMARK</div>
-        <div>INNLANDET</div>
-        <div>MØRE OG ROMSDAL</div>
+        <MegaMenuLink>DISTRIKT</MegaMenuLink>
+        <MegaMenuLink>AGDER</MegaMenuLink>
+        <MegaMenuLink>AKERSHUS</MegaMenuLink>
+        <MegaMenuLink>BUSKERUD</MegaMenuLink>
+        <MegaMenuLink>FINNMARK</MegaMenuLink>
+        <MegaMenuLink>INNLANDET</MegaMenuLink>
+        <MegaMenuLink>MØRE OG ROMSDAL</MegaMenuLink>
       </div>
       <div className={cn("flex flex-col gap-2")}>
-        <div>ROGALAND</div>
-        <div>TELEMARK</div>
-        <div>TROMS</div>
-        <div>TRØNDELAG</div>
-        <div>VESTFOLD</div>
-        <div>VESTLANDET</div>
-        <div>ØSTFOLD</div>
+        <MegaMenuLink>ROGALAND</MegaMenuLink>
+        <MegaMenuLink>TELEMARK</MegaMenuLink>
+        <MegaMenuLink>TROMS</MegaMenuLink>
+        <MegaMenuLink>TRØNDELAG</MegaMenuLink>
+        <MegaMenuLink>VESTFOLD</MegaMenuLink>
+        <MegaMenuLink>VESTLANDET</MegaMenuLink>
+        <MegaMenuLink>ØSTFOLD</MegaMenuLink>
       </div>
       <div className={cn("flex flex-col gap-2")}>
-        <div>TEMASIDER</div>
-        <div>NRK HUMOR</div>
-        <div>NRK MAT</div>
-        <div>NRK SKOLE</div>
-        <div>NRKBETA</div>
-        <div>INFO</div>
-        <div>INFORMASJON</div>
-        <div>KARRIERE</div>
+        <MegaMenuLink>TEMASIDER</MegaMenuLink>
+        <MegaMenuLink>NRK HUMOR</MegaMenuLink>
+        <MegaMenuLink>NRK MAT</MegaMenuLink>
+        <MegaMenuLink>NRK SKOLE</MegaMenuLink>
+        <MegaMenuLink>NRKBETA</MegaMenuLink>
+        <MegaMenuLink>INFO</MegaMenuLink>
+        <MegaMenuLink>INFORMASJON</MegaMenuLink>
+        <MegaMenuLink>KARRIERE</MegaMenuLink>
       </div>
     </div>
   );
 };
+
+const MegaMenuLink = ({
+  tabIndex,
+  children,
+  outline,
+}: {
+  tabIndex?: number;
+  children: string;
+  outline?: boolean;
+}) => (
+  <a
+    href={`/${children.toLowerCase()}-demo`}
+    tabIndex={tabIndex}
+    aria-hidden
+    className={cn("uppercase", {})}
+  >
+    {children}
+  </a>
+);
